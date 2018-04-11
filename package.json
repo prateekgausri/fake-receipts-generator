@@ -1,0 +1,28 @@
+{
+  "name": "fake-receipts-generator",
+  "version": "1.0.0",
+  "description": "Generates fake receipts by selecting random templates generated from the templates folder",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabbuuday/fake-receipts-generator.git"
+  },
+  "keywords": [
+    "receipts",
+    "bills",
+    "fake-receipts",
+    "receipt-templates"
+  ],
+  "author": "Sabbu Uday Kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sabbuuday/fake-receipts-generator/issues"
+  },
+  "homepage": "https://github.com/sabbuuday/fake-receipts-generator#readme",
+  "dependencies": {
+    "dom-to-image": "^2.6.0"
+  }
+}
