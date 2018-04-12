@@ -22,7 +22,5 @@
     "url": "https://github.com/sabbuuday/fake-receipts-generator/issues"
   },
   "homepage": "https://github.com/sabbuuday/fake-receipts-generator#readme",
-  "dependencies": {
-    "dom-to-image": "^2.6.0"
-  }
+  "dependencies": {}
 }
