@@ -1,0 +1,62 @@
+{
+    "logo": "walmart",
+    "address": [
+        "( 603 ) 286 - 7673",
+        "MANAGER GREGORY BOOM",
+        "39 E MAIN/i-93 EXIT 20",
+        "TILTON NH 03276"
+    ],
+    "billInfo": "ST# 02369 OP# 006544 TE# 12 TR# 04820",
+    "itemDescriptions": [
+        "LUVS SP SIZ2",
+        "KC SEA SLT",
+        "FUN NUGGETS",
+        "B J ICECRM",
+        "B J ICECRM",
+        "AQUAFINA",
+        "BE GRL CAULF",
+        "BE GRL CAULF",
+        "PC240REFRESH",
+        "T-SHIRT"
+    ],
+    "itemIds": [
+        "003700094855",
+        "008411410812",
+        "003700094855",
+        "008411410812",
+        "003700094855",
+        "008411410812",
+        "003700094855",
+        "008411410812",
+        "003700094855",
+        "008411410812"
+    ],
+    "itemTypes": [
+        "&nbsp",
+        "F",
+        "F",
+        "&nbsp",
+        "F",
+        "F",
+        "F",
+        "F",
+        "F",
+        "F"
+    ],
+    "itemPrices": [
+        "19.77 N",
+        "2.98 N",
+        "5.47 N",
+        "3.97 N",
+        "3.97 N",
+        "1.58 N",
+        "1.84 N",
+        "1.84 N",
+        "4.77 N",
+        "14.44 N"
+    ],
+    "subTotal": "114.89",
+    "total": "114.89",
+    "debitTend": "114.89",
+    "changeDue": "0.00"
+}

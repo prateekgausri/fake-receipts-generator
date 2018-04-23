@@ -6,35 +6,20 @@ define(function (require) {
     var receiptConf = JSON.parse(require('text!receipt.config.json'));
 
     var receiptTemplate = require('text!templates/receipt.html');
-    var detailsOnTopTemplate = require('text!templates/type1/detailsOnTop.html');
-    var middleLinerTemplate = require('text!templates/type1/middleLiner.html');
-    var listItemsTemplate = require('text!templates/type1/listItems.html');
-    var detailsOnBottomTemplate = require('text!templates/type1/detailsOnBottom.html');
-    var detailsOnTopTemplate = require('text!templates/type2/detailsOnTop.html');
-    var middleLinerTemplate = require('text!templates/type2/middleLiner.html');
-    var listItemsTemplate = require('text!templates/type2/listItems.html');
-    var detailsOnBottomTemplate = require('text!templates/type2/detailsOnBottom.html');
+    var metaData = JSON.parse(require('text!data/meta.json'));
+    var type1 = require('text!templates/type1.html');
+    var type2 = require('text!templates/type2.html');
 
     var typesOfTemplates = receiptConf.typesOfTemplates;
     var numberOfReceipts = receiptConf.numberOfReceipts;
     var templates = [];
 
     for (typeCount = 1; typeCount <= typesOfTemplates; typeCount++) {
-        var detailsOnTopTemplate = require('text!templates/type' + typeCount + '/detailsOnTop.html');
-        var middleLinerTemplate = require('text!templates/type' + typeCount + '/middleLiner.html');
-        var listItemsTemplate = require('text!templates/type' + typeCount + '/listItems.html');
-        var detailsOnBottomTemplate = require('text!templates/type' + typeCount + '/detailsOnBottom.html');
-
-        templates.push({
-            detailsOnTop: detailsOnTopTemplate,
-            middleLiner: middleLinerTemplate,
-            listItems: listItemsTemplate,
-            detailsOnBottom: detailsOnBottomTemplate
-        });
+        var template = require('text!templates/type' + typeCount + '.html');
+        templates.push(template);
     }
 
     var receipt = function () {
-        var compiledReceiptTemp;
         var tempSeries = 1;
 
         var downloadReceipts = function () {
@@ -54,12 +39,12 @@ define(function (require) {
 
         var createTemplate = function (tempSeries, typeCount) {
             var currentTemplate = templates[typeCount - 1];
-            compiledReceiptTemp = _.template(receiptTemplate)({
+            var compiledCurrentTemp = _.template(currentTemplate)({
+                meta: metaData
+            });
+            var compiledReceiptTemp = _.template(receiptTemplate)({
                 tempSeries: tempSeries,
-                detailsOnTop: currentTemplate.detailsOnTop,
-                middleLiner: currentTemplate.middleLiner,
-                listItems: currentTemplate.listItems,
-                detailsOnBottom: currentTemplate.detailsOnBottom
+                template: compiledCurrentTemp
             });
 
             $('body').append(compiledReceiptTemp);
