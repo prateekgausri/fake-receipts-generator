@@ -4,6 +4,7 @@
   "description": "Generates fake receipts by selecting random templates generated from the templates folder",
   "main": "app.js",
   "scripts": {
+    "server": "lite-server -c server.conf.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +23,8 @@
     "url": "https://github.com/sabbuuday/fake-receipts-generator/issues"
   },
   "homepage": "https://github.com/sabbuuday/fake-receipts-generator#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
 }
