@@ -4,11 +4,11 @@ define(function (require) {
     var _ = require('underscore');
     var html2canvas = require('html2canvas');
     var receiptConf = JSON.parse(require('text!receipt.config.json'));
+    var shuffle = require('shuffle');
 
     var receiptTemplate = require('text!templates/receipt.html');
-    var metaData = JSON.parse(require('text!data/meta.json'));
     var type1 = require('text!templates/type1.html');
-    var type2 = require('text!templates/type2.html');
+    // var type2 = require('text!templates/type2.html');
 
     var typesOfTemplates = receiptConf.typesOfTemplates;
     var numberOfReceipts = receiptConf.numberOfReceipts;
@@ -40,7 +40,7 @@ define(function (require) {
         var createTemplate = function (tempSeries, typeCount) {
             var currentTemplate = templates[typeCount - 1];
             var compiledCurrentTemp = _.template(currentTemplate)({
-                meta: metaData
+                meta: new shuffle().getRandomList()
             });
             var compiledReceiptTemp = _.template(receiptTemplate)({
                 tempSeries: tempSeries,
