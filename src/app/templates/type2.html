@@ -1,0 +1,58 @@
+<div style="line-height: 0.7;">
+    <div style="text-align: center">
+        <img src="assets/images/<%=meta.logo%>.png" style="max-width: 300px;opacity: 0.7">
+        <% _.each(meta.address, function(addressLine) { %>
+            <div>
+                <%= addressLine %>
+            </div>
+            <% }); %>
+    </div>
+
+    <div style="margin: 10px 0">ST# 02369 OP# 006544 TE# 12 TR# 04820</div>
+
+    <div>
+        <% _.each(meta.items, function(item, index) { %>
+            <div>
+                <div style="display: flex;">
+                    <div style="min-width: 200px;">
+                        <%= item %>
+                    </div>
+                    <div>
+                        <%= meta.itemPrices[index] %>
+                    </div>
+                </div>
+                <div style="display: flex">
+                    <div style="padding-left: 30px;min-width: 177px">
+                        <%= meta.itemIds[index] %>
+                    </div>
+                    <div>
+                        <%= meta.itemPrices[index].replace('$','') %>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+    </div>
+
+    <div style="display: flex;margin-top: 10px">
+        <div style="width: 205px;">
+            <div>SUBTOTAL</div>
+            <div>TOTAL</div>
+            <div>DEBIT TEND</div>
+            <div>CHANGE DUE</div>
+        </div>
+        <div style="width: 70px;">
+            <div>
+                <%= meta.subTotal %>
+            </div>
+            <div>
+                <%= meta.total %>
+            </div>
+            <div>
+                <%= meta.debitTend %>
+            </div>
+            <div>
+                <%= meta.changeDue %>
+            </div>
+        </div>
+    </div>
+</div>

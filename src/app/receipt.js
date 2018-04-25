@@ -8,7 +8,7 @@ define(function (require) {
 
     var receiptTemplate = require('text!templates/receipt.html');
     var type1 = require('text!templates/type1.html');
-    // var type2 = require('text!templates/type2.html');
+    var type2 = require('text!templates/type2.html');
 
     var typesOfTemplates = receiptConf.typesOfTemplates;
     var numberOfReceipts = receiptConf.numberOfReceipts;

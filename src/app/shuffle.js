@@ -47,7 +47,7 @@ define(function (require) {
             var mixedItems = mixItems(metaData.itemDescriptions, metaData.companySpecificItems);
             var itemsLength = mixedItems.length;
             var randomizedMetaData = {
-                logo: metaData.logo,
+                logo: metaData.logo[getRandomInt(0, metaData.logo.length - 1)],
                 address: metaData.address,
                 billInfo: metaData.billInfo,
                 subTotal: metaData.subTotal,

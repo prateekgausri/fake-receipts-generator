@@ -1,64 +1,66 @@
-<div style="text-align: center">
-    <img src="assets/images/<%=meta.logo%>.png" style="max-width: 300px;">
-    <% _.each(meta.address, function(addressLine) { %>
-        <div>
-            <%= addressLine %>
-        </div>
-        <% }); %>
-</div>
+<div style="line-height: 20px;">
+    <div style="text-align: center">
+        <img src="assets/images/<%=meta.logo%>.png" style="max-width: 300px;opacity: 0.7">
+        <% _.each(meta.address, function(addressLine) { %>
+            <div>
+                <%= addressLine %>
+            </div>
+            <% }); %>
+    </div>
 
-<div>ST# 02369 OP# 006544 TE# 12 TR# 04820</div>
+    <div>ST# 02369 OP# 006544 TE# 12 TR# 04820</div>
 
-<div style="display: flex;">
-    <div style="max-width: 90px;">
-        <% _.each(meta.items, function(description) { %>
-            <div>
-                <%= description %>
-            </div>
-            <% }); %>
+    <div style="display: flex;">
+        <div style="max-width: 90px;">
+            <% _.each(meta.items, function(description) { %>
+                <div>
+                    <%= description %>
+                </div>
+                <% }); %>
+        </div>
+        <div style="text-align: center;max-width: 90px;padding-left: 10px;">
+            <% _.each(meta.itemIds, function(id) { %>
+                <div>
+                    <%= id %>
+                </div>
+                <% }); %>
+        </div>
+        <div style="max-width: 20px;padding-left: 10px;">
+            <% _.each(meta.itemTypes, function(type) { %>
+                <div>
+                    <%= type %>
+                </div>
+                <% }); %>
+        </div>
+        <div style="text-align: right;max-width: 60px;padding-left: 30px;">
+            <% _.each(meta.itemPrices, function(price) { %>
+                <div>
+                    <%= price %>
+                </div>
+                <% }); %>
+        </div>
     </div>
-    <div style="text-align: center;max-width: 90px;padding-left: 10px;">
-        <% _.each(meta.itemIds, function(id) { %>
-            <div>
-                <%= id %>
-            </div>
-            <% }); %>
-    </div>
-    <div style="max-width: 20px;padding-left: 10px;">
-        <% _.each(meta.itemTypes, function(type) { %>
-            <div>
-                <%= type %>
-            </div>
-            <% }); %>
-    </div>
-    <div style="text-align: right;max-width: 60px;padding-left: 30px;">
-        <% _.each(meta.itemPrices, function(price) { %>
-            <div>
-                <%= price %>
-            </div>
-            <% }); %>
-    </div>
-</div>
 
-<div style="text-align: right;display: flex;">
-    <div style="width: 205px;">
-        <div>SUBTOTAL</div>
-        <div>TOTAL</div>
-        <div>DEBIT TEND</div>
-        <div>CHANGE DUE</div>
-    </div>
-    <div style="width: 70px;">
-        <div>
-            <%= meta.subTotal %>
+    <div style="text-align: right;display: flex;">
+        <div style="width: 205px;">
+            <div>SUBTOTAL</div>
+            <div>TOTAL</div>
+            <div>DEBIT TEND</div>
+            <div>CHANGE DUE</div>
         </div>
-        <div>
-            <%= meta.total %>
-        </div>
-        <div>
-            <%= meta.debitTend %>
-        </div>
-        <div>
-            <%= meta.changeDue %>
+        <div style="width: 70px;">
+            <div>
+                <%= meta.subTotal %>
+            </div>
+            <div>
+                <%= meta.total %>
+            </div>
+            <div>
+                <%= meta.debitTend %>
+            </div>
+            <div>
+                <%= meta.changeDue %>
+            </div>
         </div>
     </div>
 </div>
